@@ -1,0 +1,180 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+* {
+    font-family: "Inter", sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    align-items: center;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    user-select: none;
+    background-color: #f7f7f7;
+}
+
+.box, .box2, .box3 {
+    display: block;
+    margin: 20px auto;
+    width: 80%;
+    padding: 15px;
+    background-color: #F5F5F5;
+    box-shadow: 5px 5px 20px grey;
+    border-radius: 15px;
+}
+
+.imagens {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.imagens section {
+    box-shadow: 3px 3px 10px grey;
+    border-radius: 15px;
+    margin: 20px;
+    padding: 15px;
+    width: 280px;
+    background-color: #fff;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.imagens section:hover {
+    transform: scale(1.05);
+    box-shadow: 5px 5px 25px grey;
+}
+
+.imagens img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+section h3 {
+    font-size: large;
+    font-weight: 800;
+    color: #418059;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+}
+
+form input {
+    padding: 15px;
+    outline: none;
+    width: 80%;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px grey;
+}
+
+.btnCalcular {
+    padding: 15px;
+    width: 80%;
+    background-color: #0069D7;
+    border: none;
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+    margin: 20px;
+}
+
+.btnCalcular:hover {
+    opacity: 75%;
+}
+
+.dados {
+    text-align: start;
+    margin: 50px;
+}
+
+.quantity {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 10px;
+}
+
+.quantity .input-text.qty {
+    outline: none;
+    width: 35px;
+    height: 39px;
+    padding: 0 5px;
+    text-align: center;
+    background-color: transparent;
+    border: 1px solid #efefef;
+}
+
+.quantity.buttons_added .minus,
+.quantity.buttons_added .plus {
+    padding: 7px 10px;
+    height: 41px;
+    background-color: #ffffff;
+    border: 1px solid #efefef;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.quantity.buttons_added .minus:hover,
+.quantity.buttons_added .plus:hover {
+    opacity: 75%;
+}
+
+@media (max-width: 1024px) {
+    .imagens section {
+        width: 45%;
+    }
+}
+
+@media (max-width: 768px) {
+    .box, .box2, .box3 {
+        width: 90%;
+    }
+
+    .imagens section {
+        width: 100%;
+    }
+
+    .quantity .input-text.qty {
+        width: 35px;
+        height: 35px;
+    }
+
+    .quantity.buttons_added .minus,
+    .quantity.buttons_added .plus {
+        font-size: 1rem;
+    }
+
+    button.btnCalcular {
+        width: 90%;
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 10px;
+    }
+
+    .imagens section {
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    .quantity .input-text.qty {
+        width: 30px;
+        height: 30px;
+    }
+
+    button.btnCalcular {
+        width: 100%;
+        font-size: 1rem;
+    }
+}
