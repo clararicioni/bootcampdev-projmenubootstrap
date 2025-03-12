@@ -15,7 +15,7 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg  bg-primary text-light">
+    <nav class="navbar navbar-expand-lg  bg-primary text-light fixed-top" id="home">
         <div class="container-fluid">
             <a class="navbar-brand text-light" href="#">Restaurante Boa Comida</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -86,7 +86,7 @@
             <span class="visually-hidden">Next</span>
         </button>
     </div>
-    <h1 class="m-4">Menu - Faça a sua escolha</h1>
+    <h1 class="m-4" id="cardapios">Menu - Faça a sua escolha</h1>
     <div class="box">
         <h1>Prato Principal</h1>
         <h3 class="fs-4">Todos os pratos acompanham arroz, feijão e a sobremesa do dia.</h3>
@@ -168,12 +168,12 @@
             </section>
         </div>
     </div>
-    <div class="box3">
+    <div class="box3" id="reservas">
         <h1 class="m-4 fs-2">Dados pessoais</h1>
         <form>
             <input type="text" placeholder="Digite o seu nome" id="name">
             <input type="text" id="phone" placeholder="Digite o seu telefone"></input>
-            <input type="text" placeholder="Digite o seu email">
+            <input type="email" placeholder="Digite o seu email">
         </form>
         <button class="btnCalcular" onclick="calcQuantidade()">Calcular</button>
         <div class="modal-lg modal fade" id="pedidoModal" tabindex="-1" aria-labelledby="pedidoModalLabel"
