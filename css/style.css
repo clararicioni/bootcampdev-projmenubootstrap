@@ -1,8 +1,14 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100..900;1,100..900&display=swap');
 
 * {
     font-family: "Inter", sans-serif;
     box-sizing: border-box;
+}
+
+@media (max-width: 350px) {
+    body {
+        min-width: 350px;
+    }
 }
 
 body {
@@ -12,9 +18,12 @@ body {
     padding: 0;
     user-select: none;
     background-color: #f7f7f7;
+    font-size: 14px;
 }
 
-.box, .box2, .box3 {
+.box,
+.box2,
+.box3 {
     display: block;
     margin: 20px auto;
     width: 80%;
@@ -22,6 +31,14 @@ body {
     background-color: #F5F5F5;
     box-shadow: 5px 5px 20px grey;
     border-radius: 15px;
+    text-align: center;
+}
+
+h1,
+h2,
+h3,
+p {
+    text-align: center;
 }
 
 .imagens {
@@ -33,7 +50,6 @@ body {
 
 .imagens section {
     box-shadow: 3px 3px 10px grey;
-    border-radius: 15px;
     margin: 20px;
     padding: 15px;
     width: 280px;
@@ -49,12 +65,11 @@ body {
 .imagens img {
     width: 100%;
     height: auto;
-    border-radius: 10px;
 }
 
 section h3 {
-    font-size: large;
-    font-weight: 800;
+    font-size: medium;
+    font-weight: 700;
     color: #418059;
 }
 
@@ -63,11 +78,11 @@ form {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 30px;
+    gap: 20px;
 }
 
 form input {
-    padding: 15px;
+    padding: 10px;
     outline: none;
     width: 80%;
     border: none;
@@ -76,7 +91,7 @@ form input {
 }
 
 .btnCalcular {
-    padding: 15px;
+    padding: 12px;
     width: 80%;
     background-color: #0069D7;
     border: none;
@@ -84,15 +99,11 @@ form input {
     border-radius: 10px;
     cursor: pointer;
     margin: 20px;
+    font-size: 14px;
 }
 
 .btnCalcular:hover {
     opacity: 75%;
-}
-
-.dados {
-    text-align: start;
-    margin: 50px;
 }
 
 .quantity {
@@ -104,8 +115,8 @@ form input {
 
 .quantity .input-text.qty {
     outline: none;
-    width: 35px;
-    height: 39px;
+    width: 30px;
+    height: 35px;
     padding: 0 5px;
     text-align: center;
     background-color: transparent;
@@ -114,8 +125,8 @@ form input {
 
 .quantity.buttons_added .minus,
 .quantity.buttons_added .plus {
-    padding: 7px 10px;
-    height: 41px;
+    padding: 5px 8px;
+    height: 37px;
     background-color: #ffffff;
     border: 1px solid #efefef;
     cursor: pointer;
@@ -127,6 +138,23 @@ form input {
     opacity: 75%;
 }
 
+.carousel-caption {
+    color: white;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 15px;
+    border-radius: 10px;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    filter: invert(1);
+}
+
+.carousel-indicators button {
+    background-color: white !important;
+}
+
 @media (max-width: 1024px) {
     .imagens section {
         width: 45%;
@@ -134,7 +162,10 @@ form input {
 }
 
 @media (max-width: 768px) {
-    .box, .box2, .box3 {
+
+    .box,
+    .box2,
+    .box3 {
         width: 90%;
     }
 
@@ -143,18 +174,18 @@ form input {
     }
 
     .quantity .input-text.qty {
-        width: 35px;
-        height: 35px;
+        width: 30px;
+        height: 30px;
     }
 
     .quantity.buttons_added .minus,
     .quantity.buttons_added .plus {
-        font-size: 1rem;
+        font-size: 0.9rem;
     }
 
     button.btnCalcular {
         width: 90%;
-        font-size: 1.1rem;
+        font-size: 1rem;
     }
 }
 
@@ -169,12 +200,12 @@ form input {
     }
 
     .quantity .input-text.qty {
-        width: 30px;
-        height: 30px;
+        width: 25px;
+        height: 25px;
     }
 
     button.btnCalcular {
         width: 100%;
-        font-size: 1rem;
+        font-size: 0.9rem;
     }
 }
