@@ -4,27 +4,34 @@ $(document).ready(function () {
 function calcQuantidade() {
     var quantities = document.getElementsByName("quantity");
     var nome = document.getElementById("name").value;
-    var output = document.getElementById("output");
+    var modalBody = document.getElementById("modalBody");
 
     var formatter = new Intl.NumberFormat('pt-BR', {
         style: 'currency',
         currency: 'BRL',
     });
 
-    output.innerHTML = `
-        <h2>Caro(a) ${nome},</h2>
-        <p>Seguem os dados do seu pedido.</p>
-        <p>O seu pedido é:</p>`;
-
+    var pedidoHTML = `<h2>Caro(a) ${nome}, </h2><p>Seguem os dados do seu pedido:</p>`;
     var finalPrice = 0;
+    var itensSelecionados = 0;
+
     for (var input of quantities) {
         if (input.value > 0) {
             var price = document.getElementById(input.id).getAttribute("data-price");
             var total = price * input.value;
-            output.innerHTML += `Prato: ${input.id} - Preço unitário: ${formatter.format(price)} - Quantidade: ${input.value} - Total: ${formatter.format(total)}</br>`;
-            finalPrice += price * input.value;
+            pedidoHTML += `Prato: ${input.id} - Preço unitário: ${formatter.format(price)} - Quantidade: ${input.value} - Total: ${formatter.format(total)}</br>`;
+            finalPrice += total;
+            itensSelecionados++;
         }
     }
-    output.innerHTML += `<h2>Preço final: ${formatter.format(finalPrice)}</h2>`;
-}
 
+    if (itensSelecionados === 0) {
+        pedidoHTML = `<h3 class="text-danger text-center">Escolha pelo menos um item!</h3>`;
+    } else {
+        pedidoHTML += `<h2 class="mt-3">Total: ${formatter.format(finalPrice)}</h2>`;
+    }
+
+    modalBody.innerHTML = pedidoHTML;
+    var pedidoModal = new bootstrap.Modal(document.getElementById('pedidoModal'));
+    pedidoModal.show();
+}
